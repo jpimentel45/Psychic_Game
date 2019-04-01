@@ -45,7 +45,7 @@ document.onkeyup = function (event) {
         document.querySelector(".Losses").innerHTML = "Losses: " + Losses;
         newGame();
         document.querySelector(".userGuess").innerHTML = " ";
-        document.querySelector(".looser").src = "C:\Users\Juanito\Psychic_Game\assets\images\boo.gif";
+
     }
     //check user input with generated keyChoice
     if (userInput === computerGuess) {
@@ -61,7 +61,7 @@ document.onkeyup = function (event) {
         winGame();
         return;
         //need to have game reset for when user reaches 0 guesses, wins/loses 12 times
-    } else if (losses == 12) {
+    } else if (losses === 12) {
         looseGame();
         return;
     }
