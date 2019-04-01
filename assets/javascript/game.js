@@ -16,6 +16,22 @@ document.onkeyup = function (event) {
         guessesLeft = 12;
         document.querySelector(".guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
     }
+    function winGame() {
+        guessesLeft = 12;
+        wins = 0;
+        Losses = 0;
+        document.querySelector(".guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+        document.querySelector(".wins").innerHTML = "Wins: " + wins;
+        document.querySelector(".Losses").innerHTML = "Losses: " + Losses;
+    }
+    function looseGame() {
+        guessesLeft = 12;
+        wins = 0;
+        Losses = 0;
+        document.querySelector(".guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+        document.querySelector(".wins").innerHTML = "Wins: " + wins;
+        document.querySelector(".Losses").innerHTML = "Losses: " + Losses;
+    }
     //Correct guess increment wins + reset guessesleft
     function correctGuess() {
         wins++;
@@ -41,7 +57,12 @@ document.onkeyup = function (event) {
     }
     if (guessesLeft === 0) {
         incorrectGuess();
-    } if (wins === 12) {
-        Exit();
+    } else if (wins === 12) {
+        winGame();
+        return;
+        //need to have game reset for when user reaches 0 guesses, wins/loses 12 times
+    } else if (losses == 12) {
+        looseGame();
+        return;
     }
 };
