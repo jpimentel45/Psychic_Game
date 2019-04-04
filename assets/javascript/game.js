@@ -61,7 +61,7 @@ document.onkeyup = function (event) {
         winGame();
         return;
         //need to have game reset for when user reaches 0 guesses, wins/loses 12 times
-    } else if (losses === 12) {
+    } else if (Losses === 12) {
         looseGame();
         return;
     }
